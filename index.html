@@ -10,8 +10,22 @@
 <style>
     * {
         background-color: rgb(3, 3, 122);
+         margin: 0;
+    box-sizing: border-box;
     }
-    
+    body {
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-x: hidden;
+    min-height: 100vh;
+    width: 100%;
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+}
     header {
         position: fixed;
         top: 0;
@@ -266,7 +280,24 @@
         .pix2.image {
             justify-self: center;
             padding: 20px;
+            order:2;
         }
+          .about {
+        order:1;
+    }
+    } @media (max-width: 475px) {
+        .about-container {
+            flex-direction: column;
+            font-size: smaller;
+        }
+        .pix2.image {
+            justify-self: center;
+            padding: 20px;
+            order:2;
+        }
+          .about {
+        order:1;
+    }
     }
     /*my service*/
     
@@ -1066,3 +1097,4 @@
 </script>
 
 </html>
+
