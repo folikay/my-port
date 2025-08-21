@@ -385,6 +385,10 @@ h4 {
     height: 400px;
 }
 
+.about h1 {
+    justify-self: center;
+}
+
 @media (max-width: 768px) {
     .about-container {
         flex-direction: column;
@@ -417,9 +421,11 @@ h4 {
         order: 2;
     }
     .pix2 img {
-        justify-self: center;
-        width: 100%;
+        width: 90vw;
+        max-width: 250px;
         height: auto;
+        display: block;
+        margin: 0 auto;
     }
     .about {
         order: 1;
@@ -433,20 +439,26 @@ h4 {
 @media (orientation: portrait) {
     .about-container {
         font-size: smaller;
+        gap: 10px;
     }
     .pix2 {
         padding: 10px;
     }
     .pix2 img {
-        justify-self: center;
-        width: 100%;
+        width: 70vw;
+        max-width: 200px;
         height: auto;
+        display: block;
+        margin: 0 auto;
     }
     .about {
         font-size: small;
     }
     .about h1 {
         justify-self: center;
+    }
+    .about P {
+        font-size: small;
     }
 }
 
@@ -456,10 +468,10 @@ h4 {
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    max-width: 960px;
-    color: skyblue;
-    grid-gap: 100px;
-    margin-left: 55px;
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-gap: 50px;
+    margin-left: 20px;
     text-align: center;
     margin-top: 50px;
 }
@@ -490,7 +502,6 @@ h4 {
 
 @media (max-width: 768px) {
     .grid {
-        grid-template-columns: repeat(1, 1fr);
         max-width: 800px;
         color: skyblue;
         grid-gap: 50px;
@@ -500,13 +511,32 @@ h4 {
     }
 }
 
+
+/* Default: 3 columns for laptop/desktop */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-gap: 50px;
+}
+
+@media (orientation: portrait) and (min-width: 476px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 900px;
+    }
+}
+
 @media (max-width: 475px) {
     .grid {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: 1fr;
         max-width: 500px;
         width: 100%;
         margin-left: auto;
         margin-right: auto;
+        grid-gap: 30px;
     }
     .grid1,
     .grid2,
@@ -515,11 +545,10 @@ h4 {
     }
 }
 
-@media (orientation: portrait) {
+@media (orientation: portrait) and (min-width: 476px) {
     .grid {
-        grid-template-columns: repeat(1, 1fr);
-        max-width: 700px;
-        margin-left: 10px;
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 900px;
     }
     .grid1,
     .grid2,
@@ -625,7 +654,6 @@ input[type="range"] {
     margin-bottom: 30px;
     font-size: x-large;
     margin-top: 40px;
-    margin-left: 30px;
 }
 
 h1 {
